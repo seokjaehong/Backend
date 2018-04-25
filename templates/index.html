@@ -14,31 +14,10 @@
 </head>
 <body>
 <div class="container">
-    <table class="table">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">email</th>
-            <th scope="col">username</th>
-            <th scope="col">Profile Img</th>
-
-        </tr>
-        </thead>
-
-        <tbody>
-
-        {% for user in users %}
-            <tr>
-                <th scope="row">{{ user.pk }}</th>
-                <td>{{ user.email }}</td>
-                <td>{{ user.username }}</td>
-                {% if user.img_profile %}
-                    <td><img src="{{ user.img_profile.url }}" alt=""></td>
-                {% endif %}
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <h1>My Small Trip</h1>
+    <h4>사진 찍고 오는 여행 No! 발자국만 찍고 돌고 오는 여행 No! 진정한 여행이란? 나의 여행 후기를 들려 주었을때, 듣는 사람으로 하여금 마치 그곳을 여행 다녀온듯한 느낌을 줄수 있는가? </h4>
+    <h4>여러분의 영원히 기억될 여행추억 with My Small Trip 입니다.</h4>
+    <img src="/media/main1.jpg" alt="">
 </div>
 </body>
 </html>
