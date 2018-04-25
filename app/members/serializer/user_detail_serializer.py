@@ -23,7 +23,6 @@ class ChangePasswordSerializer(serializers.ModelSerializer):
         # 일치하면 비밀번호 유효성 검사 실시
 
         password2 = self.initial_data.get('password2')
-
         if not password == password2:
             raise serializers.ValidationError('비밀번호가 일치하지 않습니다.')
 
@@ -42,32 +41,33 @@ class ChangePasswordSerializer(serializers.ModelSerializer):
         return password
 
     def update(self, instance, validated_data):
-        print(validated_data)
-        print(instance)
         instance.set_password(validated_data['password'])
         instance.save()
 
         return instance
 
 
-
-
 class ChangeImageSerializer(serializers.ModelSerializer):
+    img_profile = serializers.ImageField(allow_empty_file=True)
+
     class Meta:
         model = User
         fields = (
             'img_profile',
         )
 
-    #
-    #
-    # def update(self, instance, validated_data):
-    #     print(instance)
-    #     print(self)
-    #     user = User.objects.get(username=self.request.user)
-    #     user.img_profile = validated_data['img_profile']
-    #     user.save()
-    #     return user
+    def update(self, instance, validated_data):
+
+        if 'img_profile' in validated_data:
+            instance.img_profile.delete()
+            instance.img_profile = validated_data['img_profile']
+            instance.save()
+            return instance
+
+        else:
+            instance.img_profile.delete()
+            instance.save()
+            return instance
 
 
 class ChangePhoneNumberSerializer(serializers.ModelSerializer):
