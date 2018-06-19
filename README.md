@@ -1,13 +1,29 @@
-# EB Docker deploy
+# MyRealtrip Copy Project(Backend)
 
-Eb Docker  배포를 연습하는 프로젝트입니다.
-`.secrets`폴더내의 파일로 비밀 키를 관리합니다.
+Fast campus 웹프로그래밍 스쿨 프로젝트입니다.
+- 주제: 마이리얼트립 웹페이지 copy 
+- 기간: 2018.4.1 ~ 2018.4.27
+- 팀 구성: ios3명 + 백엔드2명
+- 시연영상 : https://www.youtube.com/watch?v=xA2IJ0NWzoo&amp=&feature=youtu.be
+- 사용 언어:
+    - 공통: Git, Postman, Slack, Trello
+    - 백엔드: Python, Django, PostgreSQL, Django-Rest-Framework, AWS, EC2, S3, RDS, Elastic
+Beanstalk, Selenium, Docker, Sentry,
+- 주요내용:
+    - (local/dev/production)개발 환경 분리
+    - 나라 별, 도시 별, 여행상품 리스트 보여주기
+    - 상품예약, 취소하기, 예약현황에 따른 예약가능 캘린더 보여주기 기능
+    - 로그인/로그아웃/페이스북 로그인/비밀번호변경(문자인증)
+    - 이용한 상품별 후기작성/수정/삭제 기능
+    - 위시리스트, 상품별 검색 기능
+    `.secrets`폴더내의 파일로 비밀 키를 관리합니다.
 
-DB로 PostgreSQL을 사용하며, `local`환경에서는 `localhost`의 DB, `dev`환경과 `production`환경에서는 `AWS RDS`의 DB를 사용합니다.
+- DB로 PostgreSQL을 사용하며, `local`환경에서는 `localhost`의 DB, `dev`환경과 `production`환경에서는 `AWS RDS`의 DB를 사용.
 
 ## Requirements
 
 - Python (3.6)
+- Django
 - PostgreSQL
 
 ## AWS 환경
@@ -110,10 +126,7 @@ FROM    <사용자명>/<저장소명>:base
 
 ```
 
-**`.secrets/local.json`**
-
-
-**`.secrets/dev.json`**
+**`.secrets/dev.json , .secrets/prodjction.json`**
 
 ```json
 {
@@ -129,5 +142,3 @@ FROM    <사용자명>/<저장소명>:base
   }
 }
 ```
-**`.secrets/prodjction.json`**
-#dev와 동일
