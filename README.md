@@ -58,8 +58,8 @@ python manage.py runserver
 ### 배포환경 (production)
 
 ```
-expose DJANGO_SETTINGS_MODULE=config.settings.dev
-pip install -r .requirements/dev.txt
+expose DJANGO_SETTINGS_MODULE=config.settings.production
+pip install -r .requirements/production.txt
 python manage.py runserver
 
 ```
