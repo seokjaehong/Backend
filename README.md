@@ -59,7 +59,7 @@ python manage.py runserver
 
 ```
 expose DJANGO_SETTINGS_MODULE=config.settings.dev
-pip install -r .requirements/dev.txt
+pip install -r .requirements/production.txt
 python manage.py runserver
 
 ```
